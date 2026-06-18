@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4d9135c56f306e14baa814f13d1a1193
+guid: dc440038039eda14dbd629e63fa4e3da
 labels:
 - Terrain
 NativeFormatImporter:
@@ -8,10 +8,3 @@ NativeFormatImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 103573
-  packageName: Fantasy landscape
-  packageVersion: 2.0
-  assetPath: Assets/FantasyEnvironments/Environments/Ambient-Occlusion-Trees/Prefabs/Pine_tree3.prefab
-  uploadId: 647578

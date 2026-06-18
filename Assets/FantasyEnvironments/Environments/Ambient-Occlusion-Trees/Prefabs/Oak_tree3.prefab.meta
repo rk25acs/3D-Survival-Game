@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: deb3021f729059242af2e33c46ab5dfb
+guid: 7ed432fe5e37ce545beb4fff710fcbdb
 labels:
 - Terrain
 NativeFormatImporter:
@@ -8,10 +8,3 @@ NativeFormatImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 103573
-  packageName: Fantasy landscape
-  packageVersion: 2.0
-  assetPath: Assets/FantasyEnvironments/Environments/Ambient-Occlusion-Trees/Prefabs/Oak_tree3.prefab
-  uploadId: 647578
