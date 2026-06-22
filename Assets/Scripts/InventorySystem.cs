@@ -9,7 +9,18 @@ public class InventorySystem : MonoBehaviour
     public static InventorySystem Instance { get; set; }
 
     public GameObject inventoryScreenUI;
+    
+    public List<GameObject> slotList = new List<GameObject>();
+
+    public List<string> itemList = new List<string>();
+
+    private GameObject itemToAdd;
+
+    private GameObject SlotToEquip;
+
     public bool isOpen;
+
+    //public bool isFull;
 
 
     private void Awake()
@@ -28,8 +39,20 @@ public class InventorySystem : MonoBehaviour
     void Start()
     {
         isOpen = false;
+        //isFull = false;
+        PopulateSlotList();
+
     }
 
+    public void PopulateSlotList()
+    {
+        foreach (Transform child in inventoryScreenUI.transform)
+        {
+            if (child.CompareTag("Slot")) {
+                slotList.Add(child.gameObject);
+            }
+        }
+    }
 
     void Update()
     {
@@ -50,5 +73,51 @@ public class InventorySystem : MonoBehaviour
             isOpen = false;
         }
     }
+
+    public void AddToInventory(string itemName)
+    {
+        SlotToEquip = FindNextEmptySlot();
+
+        itemToAdd = (GameObject)Instantiate(Resources.Load<GameObject>(itemName), SlotToEquip.transform.position,SlotToEquip.transform.rotation);
+        itemToAdd.transform.SetParent(SlotToEquip.transform);
+        itemList.Add(itemName);
+
+    }
+
+
+    private GameObject FindNextEmptySlot()
+    {
+        foreach(GameObject slot in slotList) {
+
+            if (slot.transform.childCount == 0)
+            {
+                return slot;
+            }
+        }
+        return new GameObject();
+    }
+
+    public bool CheckifFull()
+    {
+        int counter = 0;
+
+        foreach (GameObject slot in slotList)
+        { 
+            if (slot.transform.childCount > 0)
+            {
+                counter++;
+            }
+
+        }
+        if (counter == 21)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
 
 }
